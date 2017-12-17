@@ -1,6 +1,6 @@
 {
-  "name": "fishtank-ionic",
-  "app_id": "",
+  "name": "fishtank",
+  "app_id": "fishtank",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

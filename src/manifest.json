@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Fishtank",
+  "short_name": "Fishtank",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
