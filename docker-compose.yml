@@ -1,0 +1,9 @@
+version: "2"
+services:
+  webserver:
+    image: nginx:alpine
+    ports:
+      - 8119:80
+    volumes:
+      - ./devscripts/docker-compose/nginx.conf:/etc/nginx/nginx.conf:ro
+      - .:/app
