@@ -6,13 +6,13 @@ import {growFish} from "./game.fish";
 export function catchBubble(bubble: Phaser.Sprite, size: string) {
   bubble.kill();
 
-  let newSize = .4;
+  let newSize = .4 * this.configuration.scale_ratio;
 
   if (size === 'large') {
-    newSize = .6;
+    newSize = .6 * this.configuration.scale_ratio;
   }
   if (size === 'wobble') {
-    newSize = .75;
+    newSize = .75 * this.configuration.scale_ratio;
   }
 
   growFish.call(this, newSize);
@@ -58,5 +58,5 @@ export function showNextBubble(nextBubble) {
   nextBubble.y = 400;
   nextBubble.revive();
   nextBubble.body.velocity.setTo(0, -30);
-  this.game.add.tween(nextBubble.scale).from({x: .01, y: .01}, 8000, Phaser.Easing.Linear.None, true);
+  this.game.add.tween(nextBubble.scale).from({x: .01 * this.configuration.scale_ratio, y: .01  * this.configuration.scale_ratio}, 8000, Phaser.Easing.Linear.None, true);
 }

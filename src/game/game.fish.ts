@@ -22,9 +22,9 @@ export function checkFishStop() {
     this.pufferfish.animations.play('swim', 3, true);
   }
   if (this.pufferfish.body.velocity.x > 0) {
-    this.pufferfish.scale.x = Math.abs(this.pufferfish.scale.x);
+    this.pufferfish.scale.x = Math.abs(this.pufferfish.scale.x) * this.configuration.scale_ratio;
   } else if (this.pufferfish.body.velocity.x < 0) {
-    this.pufferfish.scale.x = Math.abs(this.pufferfish.scale.x) * -1;
+    this.pufferfish.scale.x = Math.abs(this.pufferfish.scale.x) * -1 * this.configuration.scale_ratio;
   }
 }
 
@@ -35,8 +35,8 @@ export function createFish() {
   this.pufferfish = this.game.add.sprite(660, 50, 'puff');
 
   this.pufferfish.anchor.setTo(.5, .5);
-  this.pufferfish.scale.x = -.25;
-  this.pufferfish.scale.y = .25;
+  this.pufferfish.scale.x = -.25  * this.configuration.scale_ratio;
+  this.pufferfish.scale.y = .25  * this.configuration.scale_ratio;
 
   this.pufferfish.animations.add('swim');
 
@@ -54,8 +54,9 @@ export function growFish(growthFactor) {
   if (this.pufferfish.scale.x < 0) {
     growthFactor *= -1;
   }
+  growthFactor *= this.configuration.scale_ratio;
 
-  this.game.add.tween(this.pufferfish.scale).to({x: growthFactor, y: Math.abs(growthFactor)}, 600, Phaser.Easing.Back.Out, true);
+  this.game.add.tween(this.pufferfish.scale).to({x: growthFactor , y: Math.abs(growthFactor)}, 600, Phaser.Easing.Back.Out, true);
   if (this.shrinkTimer) {
     this.game.time.events.remove(this.shrinkTimer);
   }
@@ -65,9 +66,9 @@ export function growFish(growthFactor) {
 /* Shrinks the fish to normal size */
 export function shrinkFish() {
   console.log("shrinkFish");
-  let newScale = .25;
+  let newScale = .25 * this.configuration.scale_ratio;
   if (this.pufferfish.scale.x < 0) {
-    newScale *= -1;
+    newScale *= -1  * this.configuration.scale_ratio;
   }
   this.game.add.tween(this.pufferfish.scale).to({x: newScale, y: Math.abs(newScale)}, 600, Phaser.Easing.Linear.None, true);
 }

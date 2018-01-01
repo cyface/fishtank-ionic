@@ -1,0 +1,5 @@
+<TextureAtlas imagePath="pufferSpriteLarge.png">
+	<SubTexture name="puffer-large.png" x="0" y="0" width="1876" height="1876"/>
+	<SubTexture name="puffer-up-wink.png" x="1814" y="1878" width="1812" height="1877"/>
+	<SubTexture name="puffer-up.png" x="0" y="1878" width="1812" height="1877"/>
+</TextureAtlas>

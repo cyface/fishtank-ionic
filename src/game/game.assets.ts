@@ -14,4 +14,6 @@ export function loadAssets() {
   this.game.load.image('undersea', 'assets/imgs/undersea.jpg');
   this.game.load.image('coral', 'assets/imgs/seabed.png');
   this.game.load.image('coral-front', 'assets/imgs/seabed-front.png');
+
+  this.game.load.image('sunbeams', 'assets/imgs/sunbeams.png');
 }
