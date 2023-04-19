@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.5",
-    "cordova": "^8.0.0",
+    "cordova": "^8.1.2",
     "ionic": "^3.19.0",
     "typescript": "2.4.2"
   },
